@@ -1,0 +1,51 @@
+<resources>
+    <string-array name="server_regions">
+        <item>中国大陆</item>
+        <item>中国香港</item>
+    </string-array>
+    <string-array name="ecg_modules">
+        <item>3 导联（显示所选 I / II / III）</item>
+        <item>12 导联（I～V6 全部显示）</item>
+    </string-array>
+    <string-array name="ecg_wave_speeds">
+        <item>25 mm/s</item>
+        <item>12.5 mm/s</item>
+    </string-array>
+    <string-array name="blood_pressure_periods">
+        <item>手动测量</item>
+        <item>每 1 分钟</item>
+        <item>每 2 分钟</item>
+        <item>每 3 分钟</item>
+        <item>每 4 分钟</item>
+        <item>每 5 分钟</item>
+        <item>每 10 分钟</item>
+        <item>每 15 分钟</item>
+        <item>每 30 分钟</item>
+        <item>每 60 分钟</item>
+        <item>每 90 分钟</item>
+        <item>每 120 分钟</item>
+        <item>每 180 分钟</item>
+        <item>每 240 分钟</item>
+        <item>每 480 分钟</item>
+    </string-array>
+    <string-array name="ecg_leads">
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+    </string-array>
+    <string-array name="ecg_device_gains">
+        <item>×0.25</item>
+        <item>×0.5</item>
+        <item>×1</item>
+        <item>×2</item>
+    </string-array>
+    <string-array name="ecg_filters">
+        <item>诊断</item>
+        <item>监护</item>
+        <item>手术</item>
+    </string-array>
+    <string-array name="ecg_frequencies">
+        <item>50 Hz</item>
+        <item>60 Hz</item>
+    </string-array>
+</resources>

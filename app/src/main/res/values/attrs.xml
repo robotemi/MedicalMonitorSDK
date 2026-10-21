@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- 脉搏波View的自定义属性 -->
+    <declare-styleable name="PulseWaveView">
+        <!-- 最小值 -->
+        <attr name="minValue" format="integer" />
+        <!-- 最大值 -->
+        <attr name="maxValue" format="integer" />
+        <!-- 线条颜色 -->
+        <attr name="lineColor" format="color" />
+        <!-- 网格颜色 -->
+        <attr name="gridColor" format="color" />
+        <!-- 背景颜色 -->
+        <attr name="backgroundColor" format="color" />
+        <!-- 线条宽度 -->
+        <attr name="lineWidth" format="dimension" />
+        <!-- 是否显示网格 -->
+        <attr name="showGrid" format="boolean" />
+    </declare-styleable>
+
+    <!-- 脉搏柱状图View的自定义属性 -->
+    <declare-styleable name="PulseBarView">
+        <!-- 最小值 -->
+        <attr name="minValue" />
+        <!-- 最大值 -->
+        <attr name="maxValue" />
+        <!-- 柱子颜色 -->
+        <attr name="barColor" format="color" />
+        <!-- 背景颜色 -->
+        <attr name="backgroundColor" />
+        <!-- 柱子宽度 -->
+        <attr name="barWidth" format="dimension" />
+    </declare-styleable>
+</resources>

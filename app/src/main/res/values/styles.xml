@@ -1,0 +1,132 @@
+<resources>
+    <style name="Theme.MedicalDemo" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:colorAccent">@color/demo_teal</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/demo_background</item>
+        <item name="android:navigationBarColor">@color/demo_navigation_bar</item>
+        <item name="android:windowBackground">@color/demo_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+    <style name="DemoCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+    <style name="DemoRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:baselineAligned">false</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="DemoText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/demo_ink</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+    <style name="DemoMutedText" parent="DemoText">
+        <item name="android:textColor">@color/demo_muted</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="DemoSectionTitle" parent="DemoText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+    <style name="DemoWaveTitle" parent="DemoText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+    <style name="DemoMetricTile">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/bg_metric</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+    <style name="DemoMetricValue" parent="DemoText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">31sp</item>
+        <item name="android:text">@string/no_reading</item>
+    </style>
+    <style name="DemoButton" parent="android:style/Widget.Material.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">6dp</item>
+        <item name="android:paddingEnd">6dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/demo_teal</item>
+        <item name="android:backgroundTint">@color/demo_button_background</item>
+    </style>
+    <style name="DemoPrimaryButton" parent="DemoButton">
+        <item name="android:textColor">@color/demo_surface</item>
+        <item name="android:backgroundTint">@color/demo_teal</item>
+    </style>
+    <style name="DemoActionButton" parent="DemoButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="DemoPrimaryActionButton" parent="DemoActionButton">
+        <item name="android:textColor">@color/demo_surface</item>
+        <item name="android:backgroundTint">@color/demo_teal</item>
+    </style>
+    <style name="DemoLanguageButton" parent="DemoButton">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="DemoSpinner" parent="android:style/Widget.Material.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+    <style name="DemoSwitch" parent="android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/demo_ink</item>
+    </style>
+    <style name="DemoWaveform">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+</resources>

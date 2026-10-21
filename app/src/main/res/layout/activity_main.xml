@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/demo_background"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:theme="@style/Theme.MedicalDemo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            style="@style/DemoText"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/app_name"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp">
+
+        <Button
+            android:id="@+id/nav_vitals"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_vitals" />
+
+        <Button
+            android:id="@+id/nav_respiration"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_respiration" />
+
+        <Button
+            android:id="@+id/nav_waveforms"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_waveforms" />
+
+        <Button
+            android:id="@+id/nav_blood_pressure"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_blood_pressure" />
+
+        <Button
+            android:id="@+id/nav_stethoscope"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_stethoscope" />
+
+        <Button
+            android:id="@+id/nav_logs"
+            style="@style/DemoActionButton"
+            android:text="@string/nav_logs" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/content_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/section_connection"
+                style="@style/DemoCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/DemoSectionTitle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/section_connection" />
+
+                    <Button
+                        android:id="@+id/language_zh_button"
+                        style="@style/DemoLanguageButton"
+                        android:contentDescription="@string/language_chinese_description"
+                        android:text="中" />
+
+                    <Button
+                        android:id="@+id/language_en_button"
+                        style="@style/DemoLanguageButton"
+                        android:contentDescription="@string/language_english_description"
+                        android:text="EN" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/DemoMutedText"
+                    android:labelFor="@id/region_spinner"
+                    android:text="@string/server_region" />
+
+                <Spinner
+                    android:id="@+id/region_spinner"
+                    style="@style/DemoSpinner"
+                    android:entries="@array/server_regions" />
+
+                <LinearLayout style="@style/DemoRow">
+
+                    <Button
+                        android:id="@+id/connect_button"
+                        style="@style/DemoPrimaryActionButton"
+                        android:text="@string/connect_device" />
+
+                    <Button
+                        android:id="@+id/disconnect_button"
+                        style="@style/DemoActionButton"
+                        android:text="@string/disconnect_device" />
+
+                    <Button
+                        android:id="@+id/sn_button"
+                        style="@style/DemoActionButton"
+                        android:enabled="false"
+                        android:text="@string/query_serial_number" />
+
+                    <Button
+                        android:id="@+id/exit_app_button"
+                        style="@style/DemoActionButton"
+                        android:text="@string/exit_app" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/header_status"
+                    style="@style/DemoText"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/status_waiting"
+                    android:textColor="@color/demo_teal"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/sn_text"
+                    style="@style/DemoText"
+                    android:text="@string/serial_number_empty"
+                    android:textIsSelectable="true" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_ecg_measurement"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_ecg_measurement" />
+
+                <TextView
+                    style="@style/DemoMutedText"
+                    android:labelFor="@id/module_spinner"
+                    android:text="@string/ecg_module" />
+
+                <Spinner
+                    android:id="@+id/module_spinner"
+                    style="@style/DemoSpinner"
+                    android:entries="@array/ecg_modules" />
+
+                <TextView
+                    style="@style/DemoMutedText"
+                    android:labelFor="@id/ecg_speed_spinner"
+                    android:text="@string/ecg_wave_speed" />
+
+                <Spinner
+                    android:id="@+id/ecg_speed_spinner"
+                    style="@style/DemoSpinner"
+                    android:entries="@array/ecg_wave_speeds" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <GridLayout
+                        android:id="@+id/ecg_wave_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:columnCount="2"
+                        android:orientation="horizontal"
+                        android:useDefaultMargins="false" />
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/metric_heart_rate" />
+
+                        <TextView
+                            android:id="@+id/metric_hr"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/demo_teal"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/DemoRow">
+
+                    <Button
+                        android:id="@+id/freeze_button"
+                        style="@style/DemoActionButton"
+                        android:enabled="false"
+                        android:text="@string/freeze_data" />
+
+                    <Button
+                        android:id="@+id/clear_waveforms_button"
+                        style="@style/DemoActionButton"
+                        android:text="@string/clear_waveforms" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_ecg_settings"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_ecg_settings" />
+
+                <Button
+                    android:id="@+id/expand_ecg_button"
+                    style="@style/DemoButton"
+                    android:contentDescription="@string/toggle_ecg_settings_description"
+                    android:text="@string/expand_ecg_settings" />
+
+                <LinearLayout
+                    android:id="@+id/ecg_settings_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/lead_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:labelFor="@id/lead_spinner"
+                            android:text="@string/ecg_lead" />
+
+                        <Spinner
+                            android:id="@+id/lead_spinner"
+                            style="@style/DemoSpinner"
+                            android:entries="@array/ecg_leads" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/DemoMutedText"
+                        android:labelFor="@id/gain_spinner"
+                        android:text="@string/ecg_device_gain" />
+
+                    <Spinner
+                        android:id="@+id/gain_spinner"
+                        style="@style/DemoSpinner"
+                        android:entries="@array/ecg_device_gains" />
+
+                    <TextView
+                        style="@style/DemoMutedText"
+                        android:labelFor="@id/filter_spinner"
+                        android:text="@string/ecg_filter" />
+
+                    <Spinner
+                        android:id="@+id/filter_spinner"
+                        style="@style/DemoSpinner"
+                        android:entries="@array/ecg_filters" />
+
+                    <LinearLayout
+                        android:id="@+id/frequency_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:labelFor="@id/frequency_spinner"
+                            android:text="@string/ecg_frequency" />
+
+                        <Spinner
+                            android:id="@+id/frequency_spinner"
+                            style="@style/DemoSpinner"
+                            android:entries="@array/ecg_frequencies" />
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/notch_switch"
+                        style="@style/DemoSwitch"
+                        android:text="@string/ecg_notch" />
+
+                    <Button
+                        android:id="@+id/apply_ecg_button"
+                        style="@style/DemoPrimaryButton"
+                        android:enabled="false"
+                        android:text="@string/apply_ecg_settings" />
+
+                    <Switch
+                        android:id="@+id/pace_switch"
+                        style="@style/DemoSwitch"
+                        android:text="@string/ecg_pace" />
+
+                    <Button
+                        android:id="@+id/send_pace_button"
+                        style="@style/DemoButton"
+                        android:enabled="false"
+                        android:text="@string/send_pace_settings" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_respiration_measurement"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_respiration_measurement" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.robo.medicalmonitors.sdkdemo.view.PulseWaveView
+                        android:id="@+id/respiration_wave"
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/resp_wave_description"
+                        app:backgroundColor="#091C26"
+                        app:lineColor="@color/wave_resp"
+                        app:lineWidth="2dp"
+                        app:maxValue="255"
+                        app:minValue="0" />
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/metric_respiration" />
+
+                        <TextView
+                            android:id="@+id/metric_respiration_rate"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/wave_resp"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_spo2_measurement"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_spo2_measurement" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.robo.medicalmonitors.sdkdemo.view.PulseWaveView
+                        android:id="@+id/pulse_wave"
+                        android:layout_width="0dp"
+                        android:layout_height="160dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/pulse_wave_description"
+                        app:backgroundColor="#091C26"
+                        app:lineColor="@color/wave_pulse"
+                        app:lineWidth="2dp"
+                        app:maxValue="255"
+                        app:minValue="0"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/metric_oxygen" />
+
+                        <TextView
+                            android:id="@+id/metric_spo2"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/demo_blue" />
+
+                        <com.robo.medicalmonitors.sdkdemo.view.PulseBarView
+                            android:id="@+id/pulse_bar_view"
+                            android:layout_width="38dp"
+                            android:layout_height="match_parent"
+                            app:backgroundColor="#091C26"
+                            app:barColor="@color/wave_pulse"
+                            app:barWidth="38dp"
+                            app:maxValue="15"
+                            app:minValue="0"
+                           />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/metric_pr"
+                    style="@style/DemoMetricValue"
+                    android:textColor="@color/demo_blue"
+                    android:textSize="0sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_blood_pressure"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_blood_pressure" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/DemoMetricTile"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/blood_pressure_systolic" />
+
+                        <TextView
+                            android:id="@+id/bp_systolic"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/demo_purple" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/DemoMetricTile"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/blood_pressure_diastolic" />
+
+                        <TextView
+                            android:id="@+id/bp_diastolic"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/demo_purple" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/DemoMetricTile"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            style="@style/DemoMutedText"
+                            android:text="@string/blood_pressure_mean" />
+
+                        <TextView
+                            android:id="@+id/bp_mean"
+                            style="@style/DemoMetricValue"
+                            android:textColor="@color/demo_purple" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/metric_bp"
+                    style="@style/DemoMetricValue"
+                    android:textColor="@color/demo_purple"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/metric_temp"
+                    style="@style/DemoMetricValue"
+                    android:textSize="0sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    style="@style/DemoMutedText"
+                    android:labelFor="@id/period_spinner"
+                    android:text="@string/blood_pressure_period" />
+
+                <Spinner
+                    android:id="@+id/period_spinner"
+                    style="@style/DemoSpinner"
+                    android:entries="@array/blood_pressure_periods" />
+
+                <LinearLayout style="@style/DemoRow">
+
+                    <Button
+                        android:id="@+id/start_bp_button"
+                        style="@style/DemoPrimaryActionButton"
+                        android:enabled="false"
+                        android:text="@string/start_blood_pressure" />
+
+                    <Button
+                        android:id="@+id/stop_bp_button"
+                        style="@style/DemoActionButton"
+                        android:enabled="false"
+                        android:text="@string/stop_blood_pressure" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bp_status"
+                    style="@style/DemoText"
+                    android:text="@string/blood_pressure_idle"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/cuff_text"
+                    style="@style/DemoMutedText"
+                    android:text="@string/cuff_pressure_empty"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_stethoscope"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_stethoscope" />
+
+                <TextView
+                    android:id="@+id/audio_status"
+                    style="@style/DemoText"
+                    android:text="@string/checking_audio_device"
+                    android:textSize="14sp" />
+
+                <Switch
+                    android:id="@+id/monitoring_switch"
+                    style="@style/DemoSwitch"
+                    android:checked="true"
+                    android:text="@string/local_monitoring" />
+
+                <Button
+                    android:id="@+id/audio_button"
+                    style="@style/DemoPrimaryButton"
+                    android:text="@string/open_stethoscope" />
+
+                <TextView
+                    android:id="@+id/audio_info"
+                    style="@style/DemoMutedText"
+                    android:text="@string/pcm_waiting"
+                    android:textSize="13sp" />
+
+                <TextView
+                    style="@style/DemoMutedText"
+                    android:text="@string/stethoscope_hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_logs"
+                style="@style/DemoCard">
+
+                <TextView
+                    style="@style/DemoSectionTitle"
+                    android:text="@string/section_logs" />
+
+                <Switch
+                    android:id="@+id/logging_switch"
+                    style="@style/DemoSwitch"
+                    android:checked="true"
+                    android:text="@string/sdk_logging" />
+
+
+
+                <LinearLayout style="@style/DemoRow">
+
+                    <Button
+                        android:id="@+id/copy_logs_button"
+                        style="@style/DemoActionButton"
+                        android:text="@string/copy_logs" />
+
+                    <Button
+                        android:id="@+id/clear_logs_button"
+                        style="@style/DemoActionButton"
+                        android:text="@string/clear_logs" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/log_text"
+                    style="@style/DemoMutedText"
+                    android:fontFamily="monospace"
+                    android:text="@string/no_logs"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

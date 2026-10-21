@@ -1,0 +1,51 @@
+<resources>
+    <string-array name="server_regions">
+        <item>Mainland China</item>
+        <item>Hong Kong</item>
+    </string-array>
+    <string-array name="ecg_modules">
+        <item>3 leads (selected I / II / III)</item>
+        <item>12 leads (I to V6)</item>
+    </string-array>
+    <string-array name="ecg_wave_speeds">
+        <item>25 mm/s</item>
+        <item>12.5 mm/s</item>
+    </string-array>
+    <string-array name="blood_pressure_periods">
+        <item>Manual</item>
+        <item>Every 1 minute</item>
+        <item>Every 2 minutes</item>
+        <item>Every 3 minutes</item>
+        <item>Every 4 minutes</item>
+        <item>Every 5 minutes</item>
+        <item>Every 10 minutes</item>
+        <item>Every 15 minutes</item>
+        <item>Every 30 minutes</item>
+        <item>Every 60 minutes</item>
+        <item>Every 90 minutes</item>
+        <item>Every 120 minutes</item>
+        <item>Every 180 minutes</item>
+        <item>Every 240 minutes</item>
+        <item>Every 480 minutes</item>
+    </string-array>
+    <string-array name="ecg_leads">
+        <item>I</item>
+        <item>II</item>
+        <item>III</item>
+    </string-array>
+    <string-array name="ecg_device_gains">
+        <item>×0.25</item>
+        <item>×0.5</item>
+        <item>×1</item>
+        <item>×2</item>
+    </string-array>
+    <string-array name="ecg_filters">
+        <item>Diagnostic</item>
+        <item>Monitor</item>
+        <item>Surgery</item>
+    </string-array>
+    <string-array name="ecg_frequencies">
+        <item>50 Hz</item>
+        <item>60 Hz</item>
+    </string-array>
+</resources>

@@ -1,0 +1,16 @@
+<resources>
+    <color name="demo_background">#F2F6F8</color>
+    <color name="demo_surface">#FFFFFF</color>
+    <color name="demo_metric_background">#F4F8FA</color>
+    <color name="demo_button_background">#E8F1F4</color>
+    <color name="demo_ink">#17303D</color>
+    <color name="demo_muted">#637885</color>
+    <color name="demo_teal">#087F8C</color>
+    <color name="demo_blue">#197BB8</color>
+    <color name="demo_purple">#7459B0</color>
+    <color name="demo_orange">#A9600E</color>
+    <color name="demo_navigation_bar">#102631</color>
+    <color name="wave_ecg">#42E3A4</color>
+    <color name="wave_pulse">#4BD0F8</color>
+    <color name="wave_resp">#B69EF9</color>
+</resources>
