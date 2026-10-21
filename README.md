@@ -59,7 +59,7 @@ Request `RECORD_AUDIO` at runtime when using the stethoscope.
 class MedicalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        MedicalMonitor.getInstance().init(this, ServerRegion.MAINLAND_CHINA)
+        MedicalMonitor.getInstance().init(this, ServerRegion.HONGKONG_CHINA)
         Stethoscope.getInstance().init(this) // Only when needed.
     }
 }
